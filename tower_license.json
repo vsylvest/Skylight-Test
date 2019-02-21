@@ -1,0 +1,12 @@
+{
+    "company_name": "Redhat", 
+    "contact_email": "vinni.sylvester@gmail.com", 
+    "contact_name": "Ansible Lightbulb", 
+    "hostname": "736b3b5ee1f744d299d5d280ed1c090c", 
+    "instance_count": 10, 
+    "license_date": 2118797095, 
+    "license_key": "4f05c87e9041502657f877e1aa923b8774f8c24e97f844397ff11866f17cf195", 
+    "license_type": "basic", 
+    "subscription_name": "Red Hat Ansible Tower, Self-Support (10 Managed Nodes)"
+    "eula_accepted": "True"
+}
