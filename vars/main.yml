@@ -13,7 +13,7 @@ dns_domain_name_short: "ansibleworkshop"
 domain_admin_password: "MyP@ssw0rd21"
 
 # Number of users and prefix for user name
-user_count: 1
+user_count: 22
 user_prefix: student
 users_password: "Ans1bl3--"
 
@@ -29,7 +29,7 @@ ldap_access_filter: "(&(objectClass=user)(memberOf=CN=Ansible Users,CN=Users,DC=
 tower_ldap_search_dn: "CN=Users,DC=ansibleworkshop,DC=com"
 
 # Root user (ec2-user for AWS)
-root_user: root
+root_user: ec2-user
 root_password: MyPassw0rd21
 centos_root_user: centos
 
@@ -77,7 +77,7 @@ gitlab_smtp_enable: "false"
 ######################## EC2 INFO ########################
 ##########################################################
 
-ec2_region: "us-east-1"
+ec2_region: "ap-southeast-2"
 # Instance Sizes
 ec2_tower_instance_type: "t2.medium"    # Medium = 2 vCPU / 4GB
 ec2_gitlab_instance_type: "t2.medium"   # Might be able to use small...
@@ -85,8 +85,8 @@ ec2_windc_instance_type: "t2.medium"    # t2.micro fails
 ec2_windows_workstation_instance_type: "t2.medium"   # t2.small was slowwwwww...
 ec2_windows_instance_type: "t2.small"   # Small = 1 vCPU / 2GB
 # Ideally update to auto-pull the latest
-ec2_rhel_ami: ami-011b3ccf1bd6db744      # Rhel 7.6
-ec2_windows_ami: ami-017f677e   # Windows 2016 Base
+ec2_rhel_ami: ami-67589505      # Rhel 7.5
+ec2_windows_ami: ami-027db56cee714db93   # Windows 2016 Base
 
 ##########################################################
 ###################### VMWARE INFO #######################
@@ -94,7 +94,7 @@ ec2_windows_ami: ami-017f677e   # Windows 2016 Base
 
 vCenterServer: 10.0.1.2
 vCenterUsername: administrator
-vCenterPassword: MyP@ssw0rd21
+vCenterPassword: ansible
 vCenterDatacenter: Datacenter
 vCenterCluster: Cluster
 vCenterFolder: /Workshops
@@ -112,7 +112,7 @@ vCenterPortGroupExt: External
 ##########################################################
 
 azure_admin_user: "skylight"
-azure_admin_pass: "MyS3cr3tP@ssw0rd"
+azure_admin_pass: "ansible"
 
 azure_client_id: ''
 azure_secret: ''
@@ -133,13 +133,13 @@ azure_windc_instance_type: "Standard_A2_v2"    # t2.micro fails
 azure_windows_workstation_instance_type: "Standard_A2_v2"   # t2.small was slowwwwww...
 azure_windows_instance_type: "Standard_A1_v2"   # Small = 1 vCPU / 2GB
 
-azure_rhel_publisher: "OpenLogic"
-azure_rhel_offer: "CentOS"
-azure_rhel_sku: "7.5"
-azure_rhel_version: "latest"
+# Ideally update to auto-pull the latest
+azure_rhel_publisher: "RedHat"
+azure_rhel_offer: "RHEL"
+azure_rhel_sku: "7.3"
+azure_rhel_version: "7.3.2017090723"
 
 azure_win_publisher: "MicrosoftWindowsServer"
 azure_win_offer: "WindowsServer"
 azure_win_sku: "2016-Datacenter"
-azure_win_version: "latest"
-
+azure_win_version: "2016.127.20171217"
