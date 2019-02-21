@@ -86,7 +86,7 @@ ec2_windows_workstation_instance_type: "t2.medium"   # t2.small was slowwwwww...
 ec2_windows_instance_type: "t2.small"   # Small = 1 vCPU / 2GB
 # Ideally update to auto-pull the latest
 ec2_rhel_ami: ami-67589505      # Rhel 7.5
-ec2_windows_ami: ami-7c01e61e   # Windows 2016 Base
+ec2_windows_ami: ami-0148c6490018d612f   # Windows 2016 Base
 
 ##########################################################
 ###################### VMWARE INFO #######################
