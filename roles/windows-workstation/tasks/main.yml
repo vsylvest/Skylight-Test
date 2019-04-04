@@ -11,11 +11,6 @@
   - set_fact:
       user: "{{ user_prefix }}{{ inventory_hostname | regex_replace('[^0-9]', '') }}"
 
-  - name: install Chocolatey
-    win_chocolatey:
-      name: chocolatey
-      state: present
-
   - name: Install Visual Studio Code, Git, and Putty
     win_chocolatey:
       name: "{{ item }}"
@@ -23,7 +18,13 @@
     with_items:
       - visualstudiocode
       - git
+      #- putty.install
+      #- firefox
       - googlechrome
+      #- winscp
+      #- atom
+      #- notepadplusplus.install
+      #- sublimetext3
 
 #  - name: Add Putty Shortcut to administrator desktop
 #    win_shortcut:
