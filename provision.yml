@@ -6,7 +6,6 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - manage-instances
-    - complete
   vars:
     teardown: false
   tasks:
