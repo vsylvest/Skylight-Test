@@ -54,15 +54,16 @@
 
 - name: Post license key
   uri:
-    url: https://localhost/api/v1/config/
+    url: https://localhost/api/v2/config/
     method: POST
     user: admin
     password: "{{ towerpass }}"
-    body: "{{ lookup('file', playbook_dir+'/tower_license.json') }}"
+    body: "{{ lookup('file','tower_license.json') }}"
     body_format: json
     validate_certs: False
     force_basic_auth: yes
-  ignore_errors: True
+  ignore_errors: yes 
+  
 
 - name: Add LDAP Config
   uri:
