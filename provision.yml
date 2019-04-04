@@ -6,6 +6,7 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - manage-instances
+    - complete
   vars:
     teardown: false
   tasks:
@@ -21,6 +22,7 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - windows-ad-controller
+    - complete
   roles:
     - windows-ad-controller
 
@@ -31,6 +33,7 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - windows_hosts
+    - complete
   roles:
     - windows-common
 
@@ -42,6 +45,7 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - gitlab
+    - complete
   roles:
     - { role: linux-common }
     - { role: geerlingguy.gitlab }
@@ -55,6 +59,7 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - gitlab
+    - complete
   roles:
     - { role: gitlab-postconfig }
 
