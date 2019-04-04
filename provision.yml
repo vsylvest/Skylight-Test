@@ -71,6 +71,7 @@
     - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - ansible-tower
+    - tower-complete
   roles:
     - linux-common
     - ansible-tower
