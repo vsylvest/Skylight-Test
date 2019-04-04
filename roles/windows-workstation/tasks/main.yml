@@ -1,17 +1,15 @@
 ---
-- set_fact:
-    user: "{{ user_prefix }}{{ hostvars[inventory_hostname].student | regex_replace('[^0-9]', '') }}"
+# tasks file for windows-workstation
 
+### Req dot net 4.5.2 
+#- name: Install .Net framework 4.5.2 
+#  win_feature:
+#    name: DotNet-4-5-2
+#    state: present
+#    Win2016 has .NET 4.6... 
 - block:
-  - name: install Chocolatey
-    win_chocolatey:
-      name: chocolatey
-      state: present
-
-  - name: disable enhanced exit codes
-    win_chocolatey_feature:
-      name: useEnhancedExitCodes
-      state: disabled
+  - set_fact:
+      user: "{{ user_prefix }}{{ inventory_hostname | regex_replace('[^0-9]', '') }}"
 
   - name: Install Visual Studio Code, Git, and Putty
     win_chocolatey:
@@ -20,7 +18,20 @@
     with_items:
       - visualstudiocode
       - git
+      #- putty.install
+      #- firefox
       - googlechrome
+      #- winscp
+      #- atom
+      #- notepadplusplus.install
+      #- sublimetext3
+
+#  - name: Add Putty Shortcut to administrator desktop
+#    win_shortcut:
+#      description: PuTTY
+#      src: '%ProgramFiles%\PuTTY\putty.exe'
+#      dest: '%Public%\Desktop\Putty.lnk'
+#      directory: '%ProgramFiles%\PuTTY\'
 
   - name: Create an shortcut to Docs site
     win_shortcut:
@@ -161,7 +172,7 @@
       state: absent
 
   become: yes
-  become_user: "{{ dns_domain_name_short }}\\{{ user }}"
+  become_user: "{{ dns_domain_name_short }}\\{{ user_prefix }}{{ inventory_hostname | regex_replace('[^0-9]', '') }}"
   become_method: runas
 
 - include_tasks: myrtille.yml
