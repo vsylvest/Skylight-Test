@@ -625,10 +625,10 @@
 
 ################### Create Inventories ###################
 
-- name: Generate instructor inventory
-  template:
-    src: instructor_inventory.j2
-    dest: "{{ playbook_dir }}/workshops/{{ name_prefix }}/instructor_inventory.txt"
+#- name: Generate instructor inventory
+#  template:
+#    src: instructor_inventory.j2
+#    dest: "{{ playbook_dir }}/workshops/{{ name_prefix }}/instructor_inventory.txt"
 
 - name: Generate student inventories
   template:
