@@ -51,6 +51,17 @@
   retries: 10
   delay: 30
   when: towerchk not in towerversion
+  
+- name: "download credssp script"                       
+  uri:                                        
+    url: "https://raw.githubusercontent.com/vsylvest/Skylight-Test/master/roles/ansible-tower/files/tower_credssp.sh"    
+    method: GET                                   
+    dest: /root/install_modules2.sh         
+    return_content: yes  
+    mode: 0755  
+      
+- name: Reinstall credssp
+  shell: /root/./install_modules2.sh
 
 - name: Post license key
   uri:
