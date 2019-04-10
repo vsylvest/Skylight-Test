@@ -69,7 +69,6 @@
     name: "{{ item }}"
   with_items:
     - requests-credssp
-  when: towerversion < 3.3  
 
 - name: Configure KRB5.conf file
   template:
