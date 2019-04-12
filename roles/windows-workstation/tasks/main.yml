@@ -11,7 +11,7 @@
   - name: disable enhanced exit codes
     win_chocolatey_feature:
       name: useEnhancedExitCodes
-     state: disabled
+      state: disabled
 
   - name: Install Visual Studio Code, Git, and Putty
     win_chocolatey:
