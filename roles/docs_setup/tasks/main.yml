@@ -79,7 +79,7 @@
 
 - name: Copy users file to server
   copy:
-    src: templates/index.php.j2
+    src: templates/index-update.php.j2
     dest: /usr/share/nginx/html/users/index.php
 
 - name: Copy list file to server
