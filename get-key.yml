@@ -13,6 +13,3 @@
       command: "cat /var/lib/awx/projects/_16__skylight_provision/workshops/{{ workshop_prefix }}/*private.pem"
       register: key
 
-    - name: print file
-      debug: 
-        msg: "{{ key.stdout }}"
