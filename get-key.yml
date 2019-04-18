@@ -9,4 +9,4 @@
 
     - name: print files
       debug: 
-        var: "{{ output }}"
+        var: "{{ output.stdout }}"
