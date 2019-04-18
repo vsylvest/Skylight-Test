@@ -5,9 +5,6 @@
   vars:
     workshop_prefix: telstra
   tasks:
-    - name: get key for skylight
-      command: "ls -ltr  /var/lib/awx/projects/_16__skylight_provision/workshops/{{ workshop_prefix }}/*private.pem"
-      register: output
 
     - name: print file
       command: "cat /var/lib/awx/projects/_16__skylight_provision/workshops/{{ workshop_prefix }}/*private.pem"
