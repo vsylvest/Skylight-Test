@@ -6,7 +6,6 @@
     - name: get key for skylight
       command: "ls -ltr  /var/lib/awx/projects/"
       register: output
-      become: yes
 
     - name: print files
       debug: 
