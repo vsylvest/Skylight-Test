@@ -1,0 +1,13 @@
+---
+- name: Provision Instances
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - name: get key for skylight
+      command: "ls -ltr  /var/lib/awx/projects/"
+      register: output
+      become: yes
+
+    - name: print files
+      debug: 
+        var: "{{ output }}"
