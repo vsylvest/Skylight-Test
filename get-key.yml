@@ -2,11 +2,13 @@
 - name: Provision Instances
   hosts: localhost
   gather_facts: False
+  vars:
+    workshop_prefix: telstra
   tasks:
     - name: get key for skylight
-      command: "ls -ltr  /var/lib/awx/projects/_16__skylight_provision/workshops"
+      command: "ls -ltr  /var/lib/awx/projects/_16__skylight_provision/workshops/{{ workshop_prefix }}/"
       register: output
 
     - name: print files
       debug: 
-        var: "{{ output.stdout }}"
+        msg: "{{ output.stdout }}"
