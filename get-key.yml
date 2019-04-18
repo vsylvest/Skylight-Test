@@ -15,4 +15,4 @@
 
     - name: print file
       debug: 
-        msg: "{{ key.stdout }}""
+        msg: "{{ key.stdout }}"
