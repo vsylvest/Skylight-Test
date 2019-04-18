@@ -4,7 +4,7 @@
   gather_facts: False
   tasks:
     - name: get key for skylight
-      command: "ls -ltr  /var/lib/awx/projects/_16__skylight_provision/workshops/AusPost-Demo/"
+      command: "ls -ltr  /var/lib/awx/projects/_16__skylight_provision/"
       register: output
 
     - name: print files
